@@ -7,7 +7,6 @@
 
 ## Integrantes
 
-| Nome completo | RM |
 Enzo Stahal Freitas | 569001
 Matheus Bruno de Lima | 572944
 
