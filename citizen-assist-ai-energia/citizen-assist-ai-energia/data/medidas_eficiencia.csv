@@ -1,0 +1,5 @@
+id,nome,alvos,fracao_alvo,economia_pct,custo_inicial_rs,custo_anual_rs,vida_util_anos,origem,observacao
+M1,Trocar tubos fluorescentes por LED,ilum,1.0,0.50,720,0,6,ESTIMADO,"12 luminárias x R$ 60 (tubos LED + mão de obra); 70 W -> 35 W. Vida ~25.000 h"
+M2,Manutenção da refrigeração (borrachas de vedação + limpeza do condensador + termostato),exp;frz;gel,1.0,0.07,300,0,2,ESTIMADO,"Repetido a cada 2 anos; economia típica de 5%-10% (validar com técnico)"
+M3,Trocar 1 expositor antigo por modelo eficiente (Selo Procel A),exp,0.5,0.40,7000,0,12,ESTIMADO,"Uma das 2 unidades; só compensa se o equipamento estiver no fim da vida"
+M4,Trocar ar-condicionado por modelo inverter,ar,1.0,0.30,3200,0,12,ESTIMADO,"Economia de 25%-40% é comum em modelos inverter; depende do uso"

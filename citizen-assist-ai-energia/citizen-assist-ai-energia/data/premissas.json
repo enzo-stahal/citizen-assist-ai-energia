@@ -1,0 +1,99 @@
+{
+  "_leia_me": "Cada premissa tem valor, unidade, status (PUBLICO = vem de fonte consultada; ESTIMADO = suposição justificada, deve ser validada; PERFIL = hipótese do estabelecimento-exemplo) e fonte. Troque pelos dados reais da fatura do cliente sempre que possível.",
+
+  "tarifa_kwh": {
+    "valor": 1.10, "unidade": "R$/kWh (com tributos)", "status": "ESTIMADO",
+    "fonte": "Estimativa para B3 comercial Enel SP. O reajuste de 4/7/2026 foi consultado (Exame/ANEEL), mas o valor unitário deve vir da FATURA REAL.",
+    "nota": "SUBSTITUIR pelo valor 'Tarifa unit. com tributos' da fatura do estabelecimento."
+  },
+  "disponibilidade_kwh": {
+    "valor": 100, "unidade": "kWh/mês", "status": "PUBLICO",
+    "fonte": "ANEEL REN 1.000/2021 (custo de disponibilidade: 30/50/100 kWh para mono/bi/trifásico). Conferir artigo.",
+    "nota": "Ligação trifásica assumida. Mesmo gerando energia, o cliente paga no mínimo esse consumo."
+  },
+  "ano_inicio": {
+    "valor": 2027, "unidade": "ano", "status": "PERFIL",
+    "fonte": "Primeiro ano completo após a análise (hoje: nov/2026).", "nota": "Ano 1 da análise de 10 anos."
+  },
+  "horizonte_anos": {
+    "valor": 10, "unidade": "anos", "status": "ESTIMADO",
+    "fonte": "Período de referência comum a todas as alternativas.", "nota": ""
+  },
+  "taxa_desconto": {
+    "valor": 0.12, "unidade": "a.a.", "status": "ESTIMADO",
+    "fonte": "Custo de oportunidade do dinheiro do MEI (proxy). Ajustar à Selic/crédito atual.", "nota": "Usada no VPL."
+  },
+  "reajuste_tarifa": {
+    "valor": 0.06, "unidade": "a.a.", "status": "ESTIMADO",
+    "fonte": "Hipótese. A tarifa da Enel SP subiu ~79% entre 2016 e 2026 na baixa tensão (Canal Solar), média de ~6%/ano.", "nota": "Sensibilidade no relatório."
+  },
+  "hsp_kwh_m2_dia": {
+    "valor": 4.5, "unidade": "kWh/m²/dia", "status": "ESTIMADO",
+    "fonte": "Ordem de grandeza para a Grande São Paulo. VERIFICAR no CRESESB SunData (Santo André).", "nota": ""
+  },
+  "performance_ratio": {
+    "valor": 0.78, "unidade": "-", "status": "ESTIMADO",
+    "fonte": "Faixa típica 0,75-0,82 (perdas de inversor, temperatura, sujeira, cabos).", "nota": ""
+  },
+  "degradacao_fv_ano": {
+    "valor": 0.005, "unidade": "por ano", "status": "ESTIMADO",
+    "fonte": "Garantias de fabricantes costumam indicar 0,4%-0,55%/ano.", "nota": ""
+  },
+  "custo_fv_rs_wp": {
+    "valor": 3.00, "unidade": "R$/Wp instalado", "status": "ESTIMADO",
+    "fonte": "Solfácil/Cenário Energia: média nacional R$ 2,45/Wp no 1T/2026 (residencial). Adotado valor maior por ser comercial pequeno, com instalação e homologação.",
+    "nota": "Obter 3 orçamentos."
+  },
+  "om_fv_pct_capex_ano": {
+    "valor": 0.01, "unidade": "fração do investimento/ano", "status": "ESTIMADO",
+    "fonte": "Limpeza e manutenção preventiva. Troca de inversor (~10-12 anos) NÃO incluída.", "nota": ""
+  },
+  "potencia_modulo_wp": {
+    "valor": 550, "unidade": "Wp", "status": "ESTIMADO", "fonte": "Módulo comercial típico.", "nota": ""
+  },
+  "area_por_kwp_m2": {
+    "valor": 5.0, "unidade": "m²/kWp", "status": "ESTIMADO", "fonte": "Módulo de 550 Wp ocupa ~2,6 m² (+ folgas).", "nota": ""
+  },
+  "area_telhado_m2": {
+    "valor": 40, "unidade": "m²", "status": "PERFIL", "fonte": "Hipótese do estabelecimento-exemplo.", "nota": "Perguntado ao usuário."
+  },
+  "cobertura_alvo_fv": {
+    "valor": 0.90, "unidade": "fração do consumo faturável", "status": "ESTIMADO",
+    "fonte": "Dimensionamento para cobrir ~90% do consumo acima do custo de disponibilidade.", "nota": ""
+  },
+  "autoconsumo_simultaneo": {
+    "valor": 0.45, "unidade": "fração da geração", "status": "PERFIL",
+    "fonte": "Hipótese: o comércio abre de dia, mas parte da geração vai para a rede. Medir com dados horários.",
+    "nota": "Energia injetada e compensada paga Fio B; autoconsumo instantâneo não paga."
+  },
+  "fio_b_pct_por_ano": {
+    "valor": {"2026": 0.60, "2027": 0.75, "2028": 0.90}, "unidade": "fração do Fio B cobrada", "status": "PUBLICO",
+    "fonte": "Lei 14.300/2022, art. 27 (60% em 2026, 75% em 2027, 90% em 2028) - confirmado em Canal Solar e Olhar Digital.", "nota": ""
+  },
+  "fio_b_pct_apos_tabela": {
+    "valor": 0.90, "unidade": "fração", "status": "ESTIMADO",
+    "fonte": "A partir de 2029 a regra será definida pela ANEEL; hipótese de manter 90%. Pode ser pior ou melhor.", "nota": "Incerteza regulatória."
+  },
+  "fio_b_cheio_rs_kwh": {
+    "valor": 0.2065, "unidade": "R$/kWh (100% do Fio B)", "status": "ESTIMADO",
+    "fonte": "PROXY: exemplo CPFL Paulista 2026, 60% = R$ 0,1239/kWh (Canal Solar) => 100% = R$ 0,2065. NÃO é valor da Enel SP.",
+    "nota": "Buscar a TUSD Fio B da Enel SP na Resolução Homologatória de 2026."
+  },
+  "desconto_assinatura": {
+    "valor": 0.12, "unidade": "fração da tarifa", "status": "ESTIMADO",
+    "fonte": "Ofertas comerciais de energia por assinatura costumam anunciar 10%-20%. Verificar se o desconto já considera Fio B e tributos.",
+    "nota": "Depende do contrato."
+  },
+  "cobertura_assinatura": {
+    "valor": 0.90, "unidade": "fração do consumo faturável", "status": "ESTIMADO", "fonte": "Contratos costumam limitar a franquia.", "nota": ""
+  },
+  "fator_emissao_kg_kwh": {
+    "valor": 0.0385, "unidade": "kg CO2/kWh", "status": "PUBLICO",
+    "fonte": "MCTI/SIRENE: média do SIN em 2023 = 38,5 kg/MWh (Eixos). Em 2025 os meses ficaram entre ~21 e ~29 kg/MWh (Canal Solar).",
+    "nota": "A matriz brasileira já é limpa: o ganho de CO2 por kWh evitado é pequeno."
+  },
+  "pacote_eficiencia_baixo_custo": {
+    "valor": ["M1", "M2"], "unidade": "ids de medidas", "status": "ESTIMADO",
+    "fonte": "Medidas de payback curto agrupadas como 'Alternativa A'.", "nota": ""
+  }
+}

@@ -1,0 +1,9 @@
+id,equipamento,qtd,potencia_w,horas_dia,dias_mes,fator_uso,origem,observacao
+ilum,Iluminação fluorescente (2 tubos 32 W + reator),12,70,12,30,1.0,ESTIMADO,Potência por luminária incluindo reator
+exp,Expositor refrigerado vertical (bebidas) antigo,2,400,24,30,0.55,ESTIMADO,Fator de uso = fração do tempo com compressor ligado
+frz,Freezer horizontal,1,300,24,30,0.45,ESTIMADO,
+gel,Geladeira de balcão,1,250,24,30,0.45,ESTIMADO,
+ar,Ar-condicionado split 12.000 BTU/h,1,1100,8,26,0.60,ESTIMADO,Funciona só nos dias de loja aberta
+pdv,PDV + computador + balança + impressora,1,180,12,30,0.80,ESTIMADO,
+cftv,CFTV + roteador,1,60,24,30,1.00,ESTIMADO,
+out,Ventilador / TV / outros,1,150,10,30,0.70,ESTIMADO,
