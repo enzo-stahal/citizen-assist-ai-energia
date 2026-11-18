@@ -1,6 +1,6 @@
 # Citizen Assist AI – Módulo de Energia e Sustentabilidade para MEI
 
-**Global Solution 2026 – Soluções em Energias Renováveis e Sustentáveis (Ciência da Computação, 1CC)**
+**Global Solution 2026 – Soluções em Energias Renováveis e Sustentáveis (Ciência da Computação, 1CCPX)**
 
 > Este repositório contém a contribuição da disciplina *Soluções em Energias Renováveis e Sustentáveis* ao Citizen Assist AI.
 > Se o projeto for integrado a outras disciplinas, toda a contribuição de energia está na pasta `citizen_energia/`, em `data/` e em `docs/`.
